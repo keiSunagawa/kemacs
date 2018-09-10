@@ -1,0 +1,1 @@
+("~/Desktop/gits/sphere/kemacs/" "~/Desktop/gits/sphere/cirqua/sources/web-api/" "~/ensime-test/p-A/" "~/ensime-test/p-b/" "~/ensime-test/p-a/" "~/Desktop/gits/sphere/cirqua/")

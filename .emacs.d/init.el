@@ -46,9 +46,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("f153e8ed90e4d79cf2c61560da2b3091d2f3b94da42aaddc707012be4608cf52" "3e83abe75cebf5621e34ce1cbe6e12e4d80766bed0755033febed5794d0c69bf" default)))
  '(package-selected-packages
    (quote
-    (ensime use-package elscreen auto-complete helm-descbinds helm undo-tree))))
+    (darktooth-theme autumn-light-theme ensime use-package elscreen auto-complete helm-descbinds helm undo-tree))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -91,6 +94,19 @@
 ;; emsime
 (use-package ensime
   :ensure t
-  :pin melpa-stable)
+  :pin melpa)
+
+(use-package sbt-mode
+  :pin melpa)
+
+(use-package scala-mode
+  :pin melpa)
 
 (add-to-list 'exec-path "/usr/local/bin")
+
+;; (setq projectile-use-git-grep t)
+;; (projectile-global-mode t)
+;;  :bind   (("s-f" . projectile-find-file)
+;;           ("s-F" . projectile-grep)))
+
+(load-theme 'darktooth t)
