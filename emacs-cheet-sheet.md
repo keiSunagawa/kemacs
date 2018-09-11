@@ -55,6 +55,10 @@ C-z k -> kill screen
 C-z- <left> | C-z <right> -> change screen
 C-z number -> change screen number
 
+-- ensime
+C-c C-c t -> auto import
+C-c C-v e -> show error message
+
 ------
 
 -- library
