@@ -56,8 +56,9 @@ C-z- <left> | C-z <right> -> change screen
 C-z number -> change screen number
 
 -- ensime
-C-c C-c t -> auto import
+C-c C-r t -> auto import
 C-c C-v e -> show error message
+C-c C-v T -> show type
 
 ------
 
