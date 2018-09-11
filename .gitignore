@@ -8,4 +8,7 @@ kkcrc
 ac-comphist.dat
 ido.last
 network-security.data
-straight/
+/.emacs.d/straight/build/
+/.emacs.d/straight/build-cache.el
+/.emacs.d/straight/repos/
+
