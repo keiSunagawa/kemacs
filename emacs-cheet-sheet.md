@@ -7,14 +7,18 @@ C-> -> go to file end
 C-< -> go to file start
 C-<Delback> -> delete word
 C-@ -> multi line
-C-w -> cut
-M-w -> copy
+M-w -> cut
+C-w -> copy
 C-y -> yank(past)
 C-x u | C-/ | C-_ -> undo
 C-k -> delete line
 M-; -> comment out
 C-s | C-r -> searche
 C-c r -> rectangle select
+C-w -> easy-kill
+ + -> add line
+ w -> copy word
+ M-w -> cut
 
 -- files
 C-x C-f -> open file

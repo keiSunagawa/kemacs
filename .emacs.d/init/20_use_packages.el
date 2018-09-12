@@ -49,6 +49,10 @@
             (add-hook 'scala-mode-hook 'highlight-symbol-mode)
             (setq highlight-symbol-idle-delay 0.5)))
 
+(use-package easy-kill
+  :config (progn
+            (global-set-key [remap kill-ring-save] 'easy-kill)))
+
 ;; thema
 (use-package darktooth-theme
   :config (progn
