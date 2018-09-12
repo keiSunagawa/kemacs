@@ -54,6 +54,8 @@
             (global-set-key [remap kill-ring-save] 'easy-kill)
             (define-key easy-kill-base-map  (kbd "k") 'easy-kill-region)))
 
+(use-package markdown-mode)
+
 ;; thema
 (use-package darktooth-theme
   :config (progn

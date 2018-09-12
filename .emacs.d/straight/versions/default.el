@@ -15,6 +15,7 @@
  ("helm-descbinds" . "033be73f21778633813264ce1634a6e1ad873d8e")
  ("highlight-symbol.el" . "7a789c779648c55b16e43278e51be5898c121b3a")
  ("init-loader" . "5d3cea1004c11ff96b33020e337b03b925c67c42")
+ ("markdown-mode" . "30ae22215da05c4e02fcc3bfee0317cfec9c8fe5")
  ("melpa" . "de20db067590624bbd2ca5a7a537b7f11ada84f2")
  ("popup-el" . "80829dd46381754639fb764da11c67235fe63282")
  ("s.el" . "03410e6a7a2b11e47e1fea3b7d9899c7df26435e")
