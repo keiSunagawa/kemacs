@@ -18,7 +18,7 @@ C-c r -> rectangle select
 C-w -> easy-kill
  + -> add line
  w -> copy word
- M-w -> cut
+ k -> cut
 
 -- files
 C-x C-f -> open file

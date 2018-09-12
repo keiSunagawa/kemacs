@@ -51,7 +51,8 @@
 
 (use-package easy-kill
   :config (progn
-            (global-set-key [remap kill-ring-save] 'easy-kill)))
+            (global-set-key [remap kill-ring-save] 'easy-kill)
+            (define-key easy-kill-base-map  (kbd "k") 'easy-kill-region)))
 
 ;; thema
 (use-package darktooth-theme
