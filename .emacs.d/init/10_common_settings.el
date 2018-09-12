@@ -26,6 +26,10 @@
 (global-set-key (kbd "C-x <up>")    'windmove-up)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 
+;; swap kill
+(global-set-key (kbd "C-w")  'kill-ring-save)
+(global-set-key (kbd "M-w")  'kill-region)
+
 ;; copy sync clipbord
 ;; TODO only mac os
 (defun copy-from-osx ()
