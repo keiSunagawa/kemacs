@@ -20,6 +20,10 @@
   - `w` -> copy word
   - `k` -> cut
 
+## projectile
+- `C-x p` -> find file in project
+- `C-x g` -> grep in project
+
 ## files
 - `C-x C-f` -> open file
 - `C-x C-s` -> save file

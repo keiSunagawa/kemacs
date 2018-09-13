@@ -11,4 +11,4 @@ network-security.data
 /.emacs.d/straight/build/
 /.emacs.d/straight/build-cache.el
 /.emacs.d/straight/repos/
-
+projectile-bookmarks.eld
