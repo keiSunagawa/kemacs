@@ -31,7 +31,8 @@
             (require 'auto-complete-config)
             (ac-config-default)
             (setq ac-use-menu-map t)
-            (setq ac-ignore-case nil)))
+            (setq ac-ignore-case nil)
+            (global-auto-complete-mode t)))
 
 (use-package ensime
   :bind (
@@ -40,7 +41,10 @@
          ("C-i" . ensime-import-type-at-point))
   :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
   :config (progn
-            (add-to-list 'exec-path "/usr/local/bin")))
+            (add-to-list 'exec-path "/usr/local/bin")
+            ;; reload auto complete mode
+            (auto-complete-mode nil)
+            (auto-complete-mode t)))
 
 (use-package sbt-mode)
 (use-package scala-mode)

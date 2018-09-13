@@ -60,7 +60,8 @@
 (add-hook 'before-save-hook' delete-trailing-whitespace)
 (setq whitespace-display-mappings
       '(
-        (space-mark   ?\     [?·]     [?.])
+        ;; (space-mark   ?\     [?·]     [?.])
         (space-mark   ?\xA0  [?¤]     [?_])
         (newline-mark ?\n    [?↵ ?\n] [?$ ?\n])
         (tab-mark     ?\t    [?» ?\t] [?\\ ?\t])))
+(setq whitespace-line-column 250)
