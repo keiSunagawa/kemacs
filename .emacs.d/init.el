@@ -19,4 +19,3 @@
 
 ;; init
 (init-loader-load "~/.emacs.d/init")
-

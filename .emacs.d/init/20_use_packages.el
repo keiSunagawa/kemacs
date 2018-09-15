@@ -84,6 +84,12 @@
   :config (progn
             (helm-projectile-on)))
 
+(use-package direx
+  :bind (
+         ("C-x d" . direx:jump-to-directory)))
+
+(use-package aa-edit-mode)
+
 ;; thema
 (use-package darktooth-theme
   :config (progn

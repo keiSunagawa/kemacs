@@ -15,6 +15,7 @@
 - `M-;` -> comment out
 - `C-s` | C-r-> searche
 - `C-c r` -> rectangle select
+- `C-f` -> reformat indent
 - `C-w` -> easy-kill
   - `+` -> add line
   - `w` -> copy word
@@ -28,10 +29,11 @@
 - `C-x C-f` -> open file
 - `C-x C-s` -> save file
 - `C-x s` -> save file with confirm
-- `C-x d` -> Dired file browser
+- `C-x d` -> Direx file browser
   - `C-u s <RET>` -> refresh Dired buffer
   - `+` -> create directory
   - `<RET>` -> open directory or file
+  - `E` -> open directory recursively
 
 ## buffer
 - `C-x C-b` -> open buffer list
@@ -52,7 +54,7 @@
 - `M-x eval-buffer` -> load all S-expression from current buffer
 - `C-g` -> quit command
 
-## helm 
+## helm
 - `M-x helm-for-files` -> file & buffer list
 - `M-x helm-show-kill-ring` -> show kill ling
 
@@ -66,4 +68,3 @@
 - `C-i` -> auto import
 - `C-c e` -> show error message
 - `C-t` -> show type
-
