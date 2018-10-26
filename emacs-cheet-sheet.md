@@ -16,6 +16,7 @@
 - `C-s` | C-r-> searche
 - `C-c r` -> rectangle select
 - `C-f` -> reformat indent
+- `M-g g` -> go to lien
 - `C-w` -> easy-kill
   - `+` -> add line
   - `w` -> copy word
@@ -30,7 +31,7 @@
 - `C-x C-s` -> save file
 - `C-x s` -> save file with confirm
 - `C-x d` -> Direx file browser
-  - `C-u s <RET>` -> refresh Dired buffer
+  - `g` -> refresh Dired buffer
   - `+` -> create directory
   - `<RET>` -> open directory or file
   - `E` -> open directory recursively
@@ -68,3 +69,4 @@
 - `C-i` -> auto import
 - `C-c e` -> show error message
 - `C-t` -> show type
+- `M-.` -> junp to definition

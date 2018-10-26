@@ -22,6 +22,8 @@
 
 (global-set-key (kbd "ESC <down>") 'step-down)
 (global-set-key (kbd "ESC <up>") 'step-up)
+(global-set-key (kbd "M-<down>") 'step-down)
+(global-set-key (kbd "M-<up>") 'step-up)
 
 ;; Cursor elisp doc
 (add-hook 'emacs-lisp-mode-hook
@@ -38,22 +40,23 @@
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 
 ;; swap kill
-(global-set-key (kbd "C-w")  'kill-ring-save)
-(global-set-key (kbd "M-w")  'kill-region)
+;; (global-set-key (kbd "C-w")  'kill-ring-save)
+;; (global-set-key (kbd "M-w")  'kill-region)
 
 ;; copy sync clipbord
 (if (eq system-type 'darwin)
-    (defun copy-from-osx ()
-      (shell-command-to-string "pbpaste"))
+    (progn 
+      (defun copy-from-osx ()
+        (shell-command-to-string "pbpaste"))
 
-  (defun paste-to-osx (text &optional push)
-    (let ((process-connection-type nil))
-      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-        (process-send-string proc text)
-        (process-send-eof proc))))
+      (defun paste-to-osx (text &optional push)
+        (let ((process-connection-type nil))
+          (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+            (process-send-string proc text)
+            (process-send-eof proc))))
 
-  (setq interprogram-cut-function 'paste-to-osx)
-  (setq interprogram-paste-function 'copy-from-osx))
+      (setq interprogram-cut-function 'paste-to-osx)
+      (setq interprogram-paste-function 'copy-from-osx)))
 
 ;; auto insert pair char
 (electric-pair-mode 1)
@@ -69,7 +72,13 @@
 
 ;; white-space setting
 (global-whitespace-mode t)
-(add-hook 'before-save-hook' delete-trailing-whitespace)
+
+(defun delete-wspace()
+  (when (eq major-mode 'markdown-mode)
+    delete-trailing-whitespace))
+
+(add-hook 'before-save-hook' delete-wspace)
+
 (setq whitespace-display-mappings
       '(
         ;; (space-mark   ?\     [?·]     [?.])
@@ -80,3 +89,14 @@
 
 ;; indent reformat
 (global-set-key (kbd "C-f") 'indent-region)
+
+;; set scroll line
+(setq scroll-conservatively 1)
+
+;; swap char
+(global-set-key (kbd "C-q") 'transpose-chars)
+
+(menu-bar-mode -1)
+(set-keyboard-coding-system 'utf-8-emacs-mac)
+(add-to-list 'load-path "~/.emacs.d/lib/ruby_end")
+(require 'ruby-end)

@@ -1,3 +1,2 @@
-(find-file-read-only "./startup.mlt")
-
-(setq initial-buffer-choice "startup.mlt")
+(find-file-read-only "~/.emacs.d/startup.mlt")
+(setq initial-buffer-choice "~/.emacs.d/startup.mlt")

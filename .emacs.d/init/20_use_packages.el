@@ -32,7 +32,10 @@
             (ac-config-default)
             (setq ac-use-menu-map t)
             (setq ac-ignore-case nil)
+            (ac-set-trigger-key "TAB")
             (global-auto-complete-mode t)))
+;; auto-completeと競合しないかな…
+(use-package company)
 
 (use-package ensime
   :bind (
@@ -41,10 +44,7 @@
          ("C-i" . ensime-import-type-at-point))
   :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
   :config (progn
-            (add-to-list 'exec-path "/usr/local/bin")
-            ;; reload auto complete mode
-            (auto-complete-mode nil)
-            (auto-complete-mode t)))
+            (add-to-list 'exec-path "/usr/local/bin")))
 
 (use-package sbt-mode)
 (use-package scala-mode)
@@ -91,6 +91,60 @@
 (use-package aa-edit-mode)
 
 ;; thema
-(use-package darktooth-theme
+;; (use-package darktooth-theme)
+;;  :config (progn
+;;            (load-theme 'darktooth t)))
+(use-package madhat2r-theme)
+
+;; elixir
+(use-package elixir-mode
   :config (progn
-            (load-theme 'darktooth t)))
+            (add-hook 'elixir-mode-hook 'highlight-symbol-mode)
+            (add-to-list 'elixir-mode-hook
+                         (defun auto-activate-ruby-end-mode-for-elixir-mode ()
+                           (set (make-variable-buffer-local 'ruby-end-expand-keywords-before-re)
+                                "\\(?:^\\|\\s-+\\)\\(?:do\\)")
+                           (set (make-variable-buffer-local 'ruby-end-check-statement-modifiers) nil)
+                           (ruby-end-mode +1)))))
+(use-package alchemist)
+(use-package ac-alchemist
+  :config (progn
+            (add-to-list 'elixir-mode-hook 'ac-alchemist-setup)))
+(use-package flycheck-elixir
+  :config (progn
+            (add-hook 'elixir-mode-hook 'flycheck-mode)))
+
+(use-package csv-mode)
+
+;; rust
+(use-package rust-mode
+  :config (progn
+            (setq-default rust-format-on-save t)
+            (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))))
+
+(use-package racer
+  :config
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'racer-mode-hook #'company-mode)
+  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+  (setq company-tooltip-align-annotations t))
+
+(use-package flycheck-rust
+  :init
+  (add-hook 'rust-mode-hook
+            '(lambda ()
+               (flycheck-mode)
+               (flycheck-rust-setup))))
+
+(use-package go-mode)
+;; auto-compleat
+(add-to-list 'ac-modes 'rust-mode)
+(add-to-list 'ac-modes 'fundamental-mode)
+(add-to-list 'ac-modes 'text-mode)
+
+(use-package exec-path-from-shell
+  :config (progn
+            (when (memq window-system '(mac ns))
+              (exec-path-from-shell-initialize))
+            (add-to-list 'exec-path-from-shell-variables "REPO_ROOT")))
