@@ -19,23 +19,30 @@
   :config (progn
             (elscreen-start)
             ;; needs run after elscreen-start
-            (global-set-key (kbd "C-z <left>")  'elscreen-previous)
-            (global-set-key (kbd "C-z <right>")  'elscreen-next)))
+            (global-set-key (kbd "C-z b")  'elscreen-previous)
+            (global-set-key (kbd "C-z f")  'elscreen-next)))
 
-(use-package auto-complete
-  :bind (
-        :map ac-mode-map
-             ("M-TAB" . auto-complete))
-  :config (progn
-            ;; don't needs require ?
-            (require 'auto-complete-config)
-            (ac-config-default)
-            (setq ac-use-menu-map t)
-            (setq ac-ignore-case nil)
-            (ac-set-trigger-key "TAB")
-            (global-auto-complete-mode t)))
+;; (use-package auto-complete
+;;   :bind (
+;;         :map ac-mode-map
+;;              ("M-TAB" . auto-complete))
+;;   :config (progn
+;;             ;; don't needs require ?
+;;             (require 'auto-complete-config)
+;;             (ac-config-default)
+;;             (setq ac-use-menu-map t)
+;;             (setq ac-ignore-case nil)
+;;             (ac-set-trigger-key "TAB")
+;;             (global-auto-complete-mode t)))
 ;; auto-completeと競合しないかな…
-(use-package company)
+(use-package company
+  :bind (
+         :map company-active-map
+              ("C-n" . company-select-next)
+              ("C-p" . company-select-previous)
+         :map company-search-map
+         ("C-n" . company-select-next)
+         ("C-p" . company-select-previous)))
 
 (use-package ensime
   :bind (
@@ -47,12 +54,14 @@
             (add-to-list 'exec-path "/usr/local/bin")))
 
 (use-package sbt-mode)
-(use-package scala-mode)
+(use-package scala-mode
+  :config (progn (add-hook 'scala-mode-hook '(lambda ()
+                                              (global-auto-complete-mode -1)))))
 
 (use-package highlight-symbol
   :config (progn
             (add-hook 'emacs-lisp-mode-hook 'highlight-symbol-mode)
-            (add-hook 'scala-mode-hook 'highlight-symbol-mode)
+            ;; (add-hook 'scala-mode-hook 'highlight-symbol-mode)
             (setq highlight-symbol-idle-delay 0.5)))
 
 (use-package easy-kill
@@ -60,8 +69,8 @@
          ([remap kill-ring-save] . easy-kill)
          :map easy-kill-base-map
          ("k" . easy-kill-region)
-         ("<up>" . easy-kill-shrink)
-         ("<down>" . easy-kill-expand)))
+         ("C-p" . easy-kill-shrink)
+         ("C-n" . easy-kill-expand)))
 
 (use-package markdown-mode)
 

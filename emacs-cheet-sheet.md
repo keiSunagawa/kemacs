@@ -66,7 +66,7 @@
 - `C-z <number>` -> change screen number
 
 ## ensime
-- `C-i` -> auto import
+- `C-c C-r t` -> auto import
 - `C-c e` -> show error message
 - `C-t` -> show type
 - `M-.` -> junp to definition

@@ -1,6 +1,7 @@
+;; deplicate linum-mode ><
 ;; show line number
-(require 'linum)
-(global-linum-mode)
+;; (require 'linum)
+;; (global-linum-mode)
 
 ;; do not use tab char for indent
 (setq-default indent-tabs-mode nil)
@@ -20,10 +21,10 @@
   (interactive)
   (previous-line 5))
 
-(global-set-key (kbd "ESC <down>") 'step-down)
-(global-set-key (kbd "ESC <up>") 'step-up)
-(global-set-key (kbd "M-<down>") 'step-down)
-(global-set-key (kbd "M-<up>") 'step-up)
+(global-set-key (kbd "ESC n") 'step-down)
+(global-set-key (kbd "ESC p") 'step-up)
+(global-set-key (kbd "C-M-n") 'step-down)
+(global-set-key (kbd "C-M-p") 'step-up)
 
 ;; Cursor elisp doc
 (add-hook 'emacs-lisp-mode-hook
@@ -38,6 +39,10 @@
 (global-set-key (kbd "C-x <down>")  'windmove-down)
 (global-set-key (kbd "C-x <up>")    'windmove-up)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
+(global-set-key (kbd "C-x B")  'windmove-left)
+(global-set-key (kbd "C-x N")  'windmove-down)
+(global-set-key (kbd "C-x P")    'windmove-up)
+(global-set-key (kbd "C-x F") 'windmove-right)
 
 ;; swap kill
 ;; (global-set-key (kbd "C-w")  'kill-ring-save)
@@ -45,7 +50,7 @@
 
 ;; copy sync clipbord
 (if (eq system-type 'darwin)
-    (progn 
+    (progn
       (defun copy-from-osx ()
         (shell-command-to-string "pbpaste"))
 
@@ -88,7 +93,7 @@
 (setq whitespace-line-column 250)
 
 ;; indent reformat
-(global-set-key (kbd "C-f") 'indent-region)
+(global-set-key (kbd "C-x f") 'indent-region)
 
 ;; set scroll line
 (setq scroll-conservatively 1)
