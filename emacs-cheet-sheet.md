@@ -35,6 +35,7 @@
   - `+` -> create directory
   - `<RET>` -> open directory or file
   - `E` -> open directory recursively
+  - `o` -> open directory to other window
 
 ## buffer
 - `C-x C-b` -> open buffer list
