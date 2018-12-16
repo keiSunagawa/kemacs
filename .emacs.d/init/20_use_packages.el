@@ -159,3 +159,7 @@
             (when (memq window-system '(mac ns))
               (exec-path-from-shell-initialize))
             (add-to-list 'exec-path-from-shell-variables "REPO_ROOT")))
+
+(use-package dockerfile-mode
+  :config (progn
+            (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))))
