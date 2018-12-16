@@ -1,3 +1,6 @@
 [submodule ".emacs.d/lib/ruby_end"]
 	path = .emacs.d/lib/ruby_end
 	url = git@github.com:rejeep/ruby-end.el.git
+[submodule ".emacs.d/lib/lsp-scala"]
+	path = .emacs.d/lib/lsp-scala
+	url = https://github.com/rossabaker/lsp-scala

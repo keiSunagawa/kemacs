@@ -53,7 +53,9 @@
   :config (progn
             (add-to-list 'exec-path "/usr/local/bin")))
 
+(use-package lsp-mode)
 (use-package sbt-mode)
+(require 'lsp-scala)
 (use-package scala-mode
   :config (progn (add-hook 'scala-mode-hook '(lambda ()
                                               (global-auto-complete-mode -1)))))
