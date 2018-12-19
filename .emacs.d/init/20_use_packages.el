@@ -10,6 +10,8 @@
             (require 'helm-config)
             (helm-mode 1)))
 
+(use-package swiper-helm)
+
 (use-package helm-descbinds
   :config
   (progn
@@ -55,7 +57,7 @@
 
 (use-package lsp-mode)
 (use-package sbt-mode)
-(require 'lsp-scala)
+;; (require 'lsp-scala)
 (use-package scala-mode
   :config (progn (add-hook 'scala-mode-hook '(lambda ()
                                               (global-auto-complete-mode -1)))))
