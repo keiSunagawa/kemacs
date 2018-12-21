@@ -168,6 +168,7 @@
               (exec-path-from-shell-initialize))
             (add-to-list 'exec-path-from-shell-variables "REPO_ROOT")))
 
+
 ;; typescript
 (use-package typescript-mode
   :mode (
@@ -218,3 +219,8 @@
                 (setup-tide-mode))))
   ;; enable typescript-tslint checker
   (flycheck-add-mode 'typescript-tslint 'web-mode))
+
+(use-package dockerfile-mode
+  :config (progn
+            (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))))
+
