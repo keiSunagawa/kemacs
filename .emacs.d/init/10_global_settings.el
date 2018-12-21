@@ -107,3 +107,8 @@
 (require 'ruby-end)
 ;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
 
+
+;; recentf
+(setq recentf-max-saved-items 30)
+(recentf-mode 1)
+(bind-key "C-c C-f" 'helm-recentf)

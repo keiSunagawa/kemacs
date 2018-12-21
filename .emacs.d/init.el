@@ -33,4 +33,4 @@
  '(font-lock-string-face ((t (:foreground "thistle2"))))
  '(helm-selection ((t (:background "color-22" :foreground "color-41"))))
  '(helm-selection-line ((t (:background "#4e4e4e" :foreground "color-41"))))
- '(highlight-symbol-face ((t (:background "white" :foreground "black" :width normal)))))
+ '(highlight-symbol-face ((t (:background "color-18" :foreground "cyan" :width normal)))))
