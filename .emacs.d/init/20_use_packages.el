@@ -2,6 +2,7 @@
 (use-package undo-tree
   :config (progn
             (global-undo-tree-mode)))
+(use-package yaml-mode)
 
 (use-package helm
   :bind (
@@ -44,7 +45,9 @@
               ("C-p" . company-select-previous)
          :map company-search-map
          ("C-n" . company-select-next)
-         ("C-p" . company-select-previous)))
+         ("C-p" . company-select-previous))
+  :config (progn
+            (global-company-mode)))
 
 (use-package ensime
   :bind (
@@ -52,6 +55,8 @@
          ("C-c e" . ensime-print-errors-at-point)
          ("C-i" . ensime-import-type-at-point))
   :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
+  :init (progn
+          (setq ensime-eldoc-hints 'type))
   :config (progn
             (add-to-list 'exec-path "/usr/local/bin")))
 
@@ -91,7 +96,8 @@
             projectile-root-bottom-up)))
   :config (progn
             (projectile-global-mode)
-            (setq projectile-completion-system 'helm)))
+            (setq projectile-completion-system 'helm)
+            (add-to-list 'projectile-project-root-files "package.json")))
 
 (use-package helm-projectile
   :config (progn
@@ -161,3 +167,54 @@
             (when (memq window-system '(mac ns))
               (exec-path-from-shell-initialize))
             (add-to-list 'exec-path-from-shell-variables "REPO_ROOT")))
+
+;; typescript
+(use-package typescript-mode
+  :mode (
+         ("\\.ts\\'" . typescript-mode)
+         ("\\.tsx\\'" . typescript-mode)))
+
+(use-package tide)
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+;; formats the buffer before saving
+;; (add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(use-package web-mode
+  :mode (("\\.html?\\'" . web-mode)
+         ("\\.tsx\\'" . web-mode)
+         ("\\.jsx\\'" . web-mode))
+  :config
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2
+        web-mode-block-padding 2
+        web-mode-comment-style 2
+
+        web-mode-enable-css-colorization t
+        web-mode-enable-auto-pairing t
+        web-mode-enable-comment-keywords t
+        web-mode-enable-current-element-highlight t
+        )
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (setup-tide-mode))))
+  ;; enable typescript-tslint checker
+  (flycheck-add-mode 'typescript-tslint 'web-mode))
