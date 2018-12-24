@@ -1,3 +1,5 @@
+(setf swank:*communication-style* :fd-handler)
+
 ;; deplicate linum-mode ><
 ;; show line number
 ;; (require 'linum)
@@ -96,10 +98,10 @@
 (global-set-key (kbd "C-x f") 'indent-region)
 
 ;; set scroll line
-(setq scroll-conservatively 1)
+;; (setq scroll-conservatively 1)
 
 ;; swap char
-(global-set-key (kbd "C-q") 'transpose-chars)
+(global-set-key (kbd "M-q") 'transpose-chars)
 
 (menu-bar-mode -1)
 (set-keyboard-coding-system 'utf-8-emacs-mac)
@@ -111,4 +113,3 @@
 ;; recentf
 (setq recentf-max-saved-items 30)
 (recentf-mode 1)
-(bind-key "C-c C-f" 'helm-recentf)

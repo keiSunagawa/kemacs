@@ -4,7 +4,8 @@
 
 (use-package helm
   :bind (
-         ([remap execute-extended-command] . helm-M-x))
+         ([remap execute-extended-command] . helm-M-x)
+         ("C-c C-f" . helm-recentf))
   :config (progn
             (require 'helm-config)
             (helm-mode 1)))
