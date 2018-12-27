@@ -5,7 +5,7 @@
          ("C-i" . ensime-import-type-at-point))
   :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
   :init (progn
-          (setq ensime-eldoc-hints 'type))
+          (setq ensime-eldoc-hints 'error))
   :config (progn
             (add-to-list 'exec-path "/usr/local/bin")))
 

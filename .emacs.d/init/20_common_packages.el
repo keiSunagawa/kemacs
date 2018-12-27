@@ -10,9 +10,8 @@
             (require 'helm-config)
             (helm-mode 1)))
 
-(use-package swiper-helm
-  :bind (
-         ("C-s" . swiper-helm)))
+;;(use-package ivy
+;;  :bind ("C-s" . swiper))
 
 (use-package helm-descbinds
   :config
@@ -91,7 +90,12 @@
   :config (progn
             (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))))
 (use-package aa-edit-mode)
-(use-package go-mode)
 
-;; thema
+;; ui
 (use-package madhat2r-theme)
+(use-package dashboard
+  :init (progn
+          (setq inhibit-startup-message t)
+          (setq dashboard-startup-banner "~/.emacs.d/startup.mlt"))
+  :config (progn
+            (dashboard-setup-startup-hook)))
