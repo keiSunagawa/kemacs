@@ -94,6 +94,7 @@
 ;; ui
 (use-package madhat2r-theme)
 (use-package dashboard
+  :straight (:repo "https://github.com/keiSunagawa/emacs-dashboard" :branch "allowed-origin-ascii-banner")
   :init (progn
           (setq inhibit-startup-message t)
           (setq dashboard-startup-banner "~/.emacs.d/startup.mlt"))
