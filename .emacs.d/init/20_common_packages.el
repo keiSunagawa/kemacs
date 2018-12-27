@@ -97,6 +97,8 @@
   :straight (:repo "https://github.com/keiSunagawa/emacs-dashboard" :branch "allowed-origin-ascii-banner")
   :init (progn
           (setq inhibit-startup-message t)
-          (setq dashboard-startup-banner "~/.emacs.d/startup.mlt"))
+          (setq dashboard-startup-banner "~/.emacs.d/startup.mlt")
+          (setq dashboard-items '((recents  . 10)
+                        (projects . 5))))
   :config (progn
             (dashboard-setup-startup-hook)))
