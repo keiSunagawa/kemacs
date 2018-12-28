@@ -1,10 +1,12 @@
-(setf swank:*communication-style* :fd-handler)
-
 ;; deplicate linum-mode ><
 ;; show line number
 ;; (require 'linum)
 ;; (global-linum-mode)
 
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+(set-default 'truncate-lines t)
 ;; do not use tab char for indent
 (setq-default indent-tabs-mode nil)
 
@@ -27,6 +29,12 @@
 (global-set-key (kbd "ESC p") 'step-up)
 (global-set-key (kbd "C-M-n") 'step-down)
 (global-set-key (kbd "C-M-p") 'step-up)
+
+(defun backward-kill-line (arg)
+  "Kill chars backward until encountering the end of a line."
+  (interactive "p")
+  (kill-line 0))
+(global-set-key (kbd "M-k") 'backward-kill-line)
 
 ;; Cursor elisp doc
 (add-hook 'emacs-lisp-mode-hook
@@ -105,11 +113,17 @@
 
 (menu-bar-mode -1)
 (set-keyboard-coding-system 'utf-8-emacs-mac)
-(add-to-list 'load-path "~/.emacs.d/lib/ruby_end")
-(require 'ruby-end)
+;; (add-to-list 'load-path "~/.emacs.d/lib/ruby_end")
+;; (require 'ruby-end)
 ;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
 
+;; (defun entry-my-syntax()
+;;   (message "aaaaa")
+;;   (modify-syntax-entry ?_ "w" (standard-syntax-table))
+;;   (modify-syntax-entry ?- "w" (standard-syntax-table)))
 
+;; (add-hook 'after-change-major-mode-hook 'superword-mode)
+(global-superword-mode 1)
 ;; recentf
 (setq recentf-max-saved-items 30)
 (recentf-mode 1)
