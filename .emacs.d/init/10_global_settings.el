@@ -25,16 +25,10 @@
   (interactive)
   (previous-line 5))
 
-(global-set-key (kbd "ESC n") 'step-down)
-(global-set-key (kbd "ESC p") 'step-up)
-(global-set-key (kbd "C-M-n") 'step-down)
-(global-set-key (kbd "C-M-p") 'step-up)
-
 (defun backward-kill-line (arg)
   "Kill chars backward until encountering the end of a line."
   (interactive "p")
   (kill-line 0))
-(global-set-key (kbd "M-k") 'backward-kill-line)
 
 ;; Cursor elisp doc
 (add-hook 'emacs-lisp-mode-hook
@@ -43,20 +37,6 @@
                (setq eldoc-idle-delay 0.2)
                (setq eldoc-echo-area-use-multiline-p t)
                (turn-on-eldoc-mode))))
-
-;; window move
-(global-set-key (kbd "C-x <left>")  'windmove-left)
-(global-set-key (kbd "C-x <down>")  'windmove-down)
-(global-set-key (kbd "C-x <up>")    'windmove-up)
-(global-set-key (kbd "C-x <right>") 'windmove-right)
-(global-set-key (kbd "C-x B")  'windmove-left)
-(global-set-key (kbd "C-x N")  'windmove-down)
-(global-set-key (kbd "C-x P")    'windmove-up)
-(global-set-key (kbd "C-x F") 'windmove-right)
-
-;; swap kill
-;; (global-set-key (kbd "C-w")  'kill-ring-save)
-;; (global-set-key (kbd "M-w")  'kill-region)
 
 ;; copy sync clipbord
 (if (eq system-type 'darwin)
@@ -79,7 +59,6 @@
 ;; cua-mode
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
-(global-set-key (kbd "C-c r")  'cua-set-rectangle-mark)
 
 ;; :)
 (setq make-backup-files nil)
@@ -102,14 +81,8 @@
         (tab-mark     ?\t    [?» ?\t] [?\\ ?\t])))
 (setq whitespace-line-column 250)
 
-;; indent reformat
-(global-set-key (kbd "C-x f") 'indent-region)
-
 ;; set scroll line
 ;; (setq scroll-conservatively 1)
-
-;; swap char
-(global-set-key (kbd "M-q") 'transpose-chars)
 
 (menu-bar-mode -1)
 (set-keyboard-coding-system 'utf-8-emacs-mac)
@@ -117,12 +90,6 @@
 ;; (require 'ruby-end)
 ;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
 
-;; (defun entry-my-syntax()
-;;   (message "aaaaa")
-;;   (modify-syntax-entry ?_ "w" (standard-syntax-table))
-;;   (modify-syntax-entry ?- "w" (standard-syntax-table)))
-
-;; (add-hook 'after-change-major-mode-hook 'superword-mode)
 (global-superword-mode 1)
 ;; recentf
 (setq recentf-max-saved-items 30)

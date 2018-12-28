@@ -3,16 +3,12 @@
             (global-undo-tree-mode)))
 
 (use-package helm
-  :bind (
-         ([remap execute-extended-command] . helm-M-x)
-         ("C-c C-f" . helm-recentf)
-         ("M-y" . helm-show-kill-ring))
   :config (progn
             (require 'helm-config)
             (helm-mode 1)))
 
-(use-package swiper
-  :bind ("C-s" . swiper))
+(use-package swiper)
+(use-package expand-region)
 
 (use-package helm-descbinds
   :config
@@ -21,22 +17,11 @@
 
 (use-package elscreen
   :config (progn
-            (elscreen-start)
-            ;; needs run after elscreen-start
-            (global-set-key (kbd "C-z b")  'elscreen-previous)
-            (global-set-key (kbd "C-z f")  'elscreen-next)))
+            (elscreen-start)))
 
 (use-package company
-  :bind (
-         :map company-active-map
-              ("C-n" . company-select-next)
-              ("C-p" . company-select-previous)
-         :map company-search-map
-              ("C-n" . company-select-next)
-              ("C-p" . company-select-previous))
   :config (progn
             (global-company-mode)))
-
 
 (use-package highlight-symbol
   :config (progn
@@ -44,19 +29,7 @@
             ;; (add-hook 'scala-mode-hook 'highlight-symbol-mode)
             (setq highlight-symbol-idle-delay 0.5)))
 
-(use-package easy-kill
-  :bind (
-         ([remap kill-ring-save] . easy-kill)
-         :map easy-kill-base-map
-         ("k" . easy-kill-region)
-         ("C-p" . easy-kill-shrink)
-         ("C-n" . easy-kill-expand)))
-
-
 (use-package projectile
-  :bind (
-      ("C-x p" . projectile-find-file)
-      ("C-x g" . projectile-grep))
   ;; project-root find rule
   :init (progn
           (setq projectile-project-root-files-functions
@@ -73,9 +46,7 @@
   :config (progn
             (helm-projectile-on)))
 
-(use-package direx
-  :bind (
-         ("C-x d" . direx:jump-to-directory)))
+(use-package direx)
 
 (use-package exec-path-from-shell
   :config (progn
@@ -83,9 +54,7 @@
               (exec-path-from-shell-initialize))
             (add-to-list 'exec-path-from-shell-variables "REPO_ROOT")))
 
-(use-package ace-jump-mode
-  :bind (
-         ("C-r" . ace-jump-word-mode)))
+(use-package ace-jump-mode)
 
 ;; text file syntax support
 (use-package markdown-mode)
