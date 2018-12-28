@@ -29,7 +29,7 @@
  "f" 'indent-region
  "p" 'projectile-find-file
  "g" 'projectile-grep
- "d" 'direx:jump-to-directory
+ "d" 'direx-project:jump-to-project-root
  )
 (general-define-key
  :prefix "C-c"
