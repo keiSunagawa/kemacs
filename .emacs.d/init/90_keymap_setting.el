@@ -1,8 +1,11 @@
 (use-package general)
 
 (general-define-key
+ "C-a" 'seq-begin
+ "C-e" 'seq-end
  "C-s" 'swiper
- "C-r" 'ace-jump-word-mode
+ "C-r" 'ace-jump-mode
+ "C-@" 'seq-cua
  "M-n" 'step-down
  "M-p" 'step-up
  "M-k" 'backward-kill-line
@@ -10,6 +13,7 @@
  "M-x" 'helm-M-x
  "M-y" 'helm-show-kill-ring
  "M-w" 'er/expand-region
+ "M-u" 'seq-change-case
  )
 
 (general-define-key
@@ -29,8 +33,6 @@
  )
 (general-define-key
  :prefix "C-c"
- ;; seacential 追加したら消す
- "r" 'cua-set-rectangle-mark
  "C-f" 'helm-recentf
  )
 (general-define-key

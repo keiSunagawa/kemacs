@@ -54,7 +54,11 @@
               (exec-path-from-shell-initialize))
             (add-to-list 'exec-path-from-shell-variables "REPO_ROOT")))
 
-(use-package ace-jump-mode)
+(use-package ace-jump-mode
+  :config (progn
+            (setq ace-jump-mode-move-keys
+                  (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
+            (setq ace-jump-word-mode-use-query-char nil)))
 
 ;; text file syntax support
 (use-package markdown-mode)

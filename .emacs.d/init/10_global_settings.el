@@ -8,6 +8,8 @@
   (server-start))
 (set-default 'truncate-lines t)
 ;; do not use tab char for indent
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 (setq-default indent-tabs-mode nil)
 
 ;; show `()` highlight
@@ -57,8 +59,9 @@
 (electric-pair-mode 1)
 
 ;; cua-mode
-(cua-mode t)
+(setq cua-toggle-set-mark nil)
 (setq cua-enable-cua-keys nil)
+(cua-mode t)
 
 ;; :)
 (setq make-backup-files nil)
