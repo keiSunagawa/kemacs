@@ -77,40 +77,7 @@
 (use-package aa-edit-mode)
 
 ;; ui
+(use-package rainbow-delimiters
+  :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
 (use-package madhat2r-theme)
-(use-package dashboard
-  :init (progn
-          (setq inhibit-startup-message t)
-          (setq dashboard-startup-banner "~/.emacs.d/startup.mlt")
-          (setq dashboard-items '((docs . 5)
-                                  (recents  . 10)
-                                  (projects . 5)))
-          (setq dashboard-docks-file-list '("~/.emacs.d/cheet-sheet.md"))
-          ;; override func setting
-          (defun dashboard-insert-ascii-banner-centered:override (file)
-            (insert
-             (with-temp-buffer
-               (insert-file-contents file)
-               (buffer-string))))
- ;;         (add-to-list 'dashboard-item-generators '(docks . dashboard-qiita-insert))
-         (defun dashboard-choose-banner:override ()
-           dashboard-startup-banner)
-          (advice-add 'dashboard-insert-ascii-banner-centered :override 'dashboard-insert-ascii-banner-centered:override)
-          (advice-add 'dashboard-choose-banner :override 'dashboard-choose-banner:override))
-  :config (progn
-            (defun dashboard-insert-docs (list-size)
-              (dashboard-insert-shortcut "d" "Docs:")
-              (dashboard-insert-heading "Docs:")
-              (mapc (lambda (el)
-                      (insert "\n    ")
-                      (widget-create 'push-button
-                                     :action `(lambda (&rest ignore) (find-file-existing ,el))
-                                     :mouse-face 'highlight
-                                     :follow-link "\C-m"
-                                     :button-prefix ""
-                                     :button-suffix ""
-                                     :format "%[%t%]"
-                                     (abbreviate-file-name el)))
-                    dashboard-docks-file-list))
-            (add-to-list 'dashboard-item-generators '(docs . dashboard-insert-docs))
-            (dashboard-setup-startup-hook)))
