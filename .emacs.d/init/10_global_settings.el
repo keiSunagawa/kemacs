@@ -16,6 +16,11 @@
 (setq show-paren-delay 0)
 (show-paren-mode t)
 
+(use-package flycheck
+  :init (global-flycheck-mode)
+  :config (progn
+            (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))))
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 ;; auto reload buffer
 (global-auto-revert-mode t)
 

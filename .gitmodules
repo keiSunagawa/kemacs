@@ -3,4 +3,4 @@
 	url = git@github.com:rejeep/ruby-end.el.git
 [submodule ".emacs.d/lib/lsp-scala"]
 	path = .emacs.d/lib/lsp-scala
-	url = https://github.com/rossabaker/lsp-scala
+	url = git@github.com:rossabaker/lsp-scala.git

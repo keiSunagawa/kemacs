@@ -1,12 +1,34 @@
-(use-package ensime
-  :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
-  :init (progn
-          (setq ensime-eldoc-hints 'error))
-  :config (progn
-            (add-to-list 'exec-path "/usr/local/bin")))
+;; disaibled ensime
+;; (use-package ensime
+;;   :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
+;;   :init (progn
+;;           (setq ensime-eldoc-hints 'error))
+;;   :config (progn
+;;             (add-to-list 'exec-path "/usr/local/bin")))
 
-(use-package sbt-mode)
+(use-package sbt-mode
+  :commands sbt-start sbt-command
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
 
 (use-package scala-mode
   :config (progn (add-hook 'scala-mode-hook '(lambda ()
                                               (global-auto-complete-mode -1)))))
+
+;; metals
+(use-package lsp-mode
+  :init (setq lsp-prefer-flymake nil))
+
+;; Enable nice rendering of diagnostics like compile errors.
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode))
+
+(add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
+(require 'lsp-scala)
+(add-hook 'scala-mode-hook #'lsp)
