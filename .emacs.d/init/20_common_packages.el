@@ -67,6 +67,8 @@
                   (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
             (setq ace-jump-word-mode-use-query-char nil)))
 
+(use-package multiple-cursors)
+
 ;; text file syntax support
 (use-package markdown-mode)
 (use-package csv-mode)

@@ -17,3 +17,8 @@
             '(lambda ()
                (flycheck-mode)
                (flycheck-rust-setup))))
+
+;; use-rustic
+;;(use-package eglot)
+;;(use-package rustic
+;;  :init (setq rustic-rls-pkg 'eglot))

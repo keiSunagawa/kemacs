@@ -15,7 +15,7 @@
  ("emacs-elixir" . "bfd09392a0253e4b96c642472e5d5b757a5254f8")
  ("emacs-flycheck-elixir" . "11998d7e3e63a33453e934d25b3673f7c558e579")
  ("emacs-go-eldoc" . "cbbd2ea1e94a36004432a9ac61414cb5a95a39bd")
- ("emacs-racer" . "7e1c0166ace3d56ba8914e1d07cb9faf0580b7b5")
+ ("emacs-racer" . "e4042c29db07e2cde1d5b281460822d1e88f164b")
  ("emacs-sbt-mode" . "e658af140547cbef495c33535c7f694a501d318c")
  ("emacs-scala-mode" . "56cba2903cf6e12c715dbb5c99b34c97b2679379")
  ("ensime" . "34eb11dac3ec9d1c554c2e55bf056ece6983add7")

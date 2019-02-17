@@ -6,6 +6,9 @@
  "C-s" 'swiper
  "C-r" 'ace-jump-mode
  "C-@" 'seq-cua
+ "M-]" 'mc/mark-next-like-this
+  "M-[" 'mc/mark-previous-like-this
+ ; "M-\" 'mc/mark-next-word-like-this
  "M-n" 'step-down
  "M-p" 'step-up
  "M-k" 'backward-kill-line
