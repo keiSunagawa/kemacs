@@ -47,13 +47,20 @@
   :config (progn
             (projectile-global-mode)
             (setq projectile-completion-system 'helm)
-            (add-to-list 'projectile-project-root-files "package.json")))
+            (add-to-list 'projectile-project-root-files "package.json")
+            (add-to-list 'projectile-project-root-files ".projectroot")))
 
 (use-package helm-projectile
   :config (progn
             (helm-projectile-on)))
 
-(use-package direx)
+;; projectile like root find function
+(defun kerfume/direx-project:vc-root-p (dirname)
+  (cl-loop for vc-dir in projectile-project-root-files
+           thereis (file-exists-p (expand-file-name vc-dir dirname))))
+(use-package direx
+  :init (progn
+          (setq direx-project:project-root-predicate-functions '(kerfume/direx-project:vc-root-p))))
 
 (use-package exec-path-from-shell
   :config (progn
@@ -83,3 +90,13 @@
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package madhat2r-theme)
+
+(use-package flycheck
+  :init (global-flycheck-mode)
+  :config (progn
+            (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))))
+
+;; used better helm switch buffer
+;; (use-package nswbuff
+;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")
+;;  :1;5Cinit (setq nswbuff-exclude-buffer-regexps '("^ .*" "^\\*.*\\*")))

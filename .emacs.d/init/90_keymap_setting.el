@@ -6,9 +6,11 @@
  "C-s" 'swiper
  "C-r" 'ace-jump-mode
  "C-@" 'seq-cua
+ "C-TAB" 'elscreen-next
  "M-]" 'mc/mark-next-like-this
-  "M-[" 'mc/mark-previous-like-this
- ; "M-\" 'mc/mark-next-word-like-this
+ "M-[" 'mc/mark-previous-like-this
+ "M-C-]" 'mc/mark-next-word-like-this
+ "M-C-[" 'mc/mark-previous-word-like-this
  "M-n" 'step-down
  "M-p" 'step-up
  "M-k" 'backward-kill-line
@@ -17,7 +19,9 @@
  "M-y" 'helm-show-kill-ring
  "M-w" 'er/expand-region
  "M-u" 'seq-change-case
+ "C-M-d" 'goto-dashboard
  )
+
 
 (general-define-key
  :prefix "C-x"

@@ -16,10 +16,6 @@
 (setq show-paren-delay 0)
 (show-paren-mode t)
 
-(use-package flycheck
-  :init (global-flycheck-mode)
-  :config (progn
-            (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))))
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 ;; auto reload buffer
 (global-auto-revert-mode t)
@@ -36,6 +32,10 @@
   "Kill chars backward until encountering the end of a line."
   (interactive "p")
   (kill-line 0))
+
+(defun goto-dashboard ()
+  (interactive)
+  (switch-to-buffer "*dashboard*"))
 
 ;; Cursor elisp doc
 (add-hook 'emacs-lisp-mode-hook
