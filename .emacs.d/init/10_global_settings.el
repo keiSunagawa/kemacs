@@ -82,7 +82,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lib/ruby_end")
 ;; (require 'ruby-end)
 ;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
-
+(setq js-indent-level 2)
 (global-superword-mode 1)
 ;; recentf
 (setq recentf-max-saved-items 30)

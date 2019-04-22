@@ -14,5 +14,6 @@
 
     (add-to-list 'load-path "~/.emacs.d/lib/site-lisp")
     (require 'eaw)
-    (eaw-fullwidth)))
+    (eaw-fullwidth)
+    ))
 

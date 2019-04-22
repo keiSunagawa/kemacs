@@ -5,9 +5,12 @@
       '(
         cua-paste
         helm-M-x
+        indent-for-tab-command
+        swiper
         ))
 
 (setq mc/cmds-to-run-once
       '(
         end-of-buffer
+        markdown-outdent-or-delete
         ))

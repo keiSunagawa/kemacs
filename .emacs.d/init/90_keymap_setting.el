@@ -20,6 +20,7 @@
  "M-w" 'er/expand-region
  "M-u" 'seq-change-case
  "C-M-d" 'goto-dashboard
+ "C-M-p" 'seq-backward
  )
 
 

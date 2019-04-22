@@ -40,10 +40,10 @@
   ;; project-root find rule
   :init (progn
           (setq projectile-project-root-files-functions
-          '(projectile-root-local
-            projectile-root-top-down
-            projectile-root-top-down-recurring
-            projectile-root-bottom-up)))
+                '(projectile-root-local
+                  projectile-root-top-down
+                  projectile-root-top-down-recurring
+                  projectile-root-bottom-up)))
   :config (progn
             (projectile-global-mode)
             (setq projectile-completion-system 'helm)

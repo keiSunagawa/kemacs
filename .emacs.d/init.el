@@ -31,6 +31,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-tooltip-selection ((t (:background "color-17" :foreground "#afd7d7"))))
+ '(font-lock-constant-face ((t (:foreground "magenta"))))
  '(font-lock-string-face ((t (:foreground "thistle2"))))
  '(font-lock-type-face ((t (:inherit bold :foreground "color-29"))))
  '(helm-selection ((t (:background "color-22" :foreground "color-41"))))

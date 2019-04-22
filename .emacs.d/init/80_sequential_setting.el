@@ -11,3 +11,6 @@
 
 (define-sequential-command seq-change-case
   upcase-region downcase-region)
+
+(define-sequential-command seq-backward
+  backward-list forward-list seq-return)
