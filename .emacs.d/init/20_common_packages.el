@@ -100,6 +100,7 @@
 (use-package golden-ratio
   :config (progn
             (golden-ratio-mode)))
+(use-package yasnippet)
 ;; used better helm switch buffer
 ;; (use-package nswbuff
 ;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")

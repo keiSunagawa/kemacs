@@ -22,11 +22,13 @@
 
 ;; metals
 (use-package lsp-mode
+  :straight (:repo "https://github.com/emacs-lsp/lsp-mode" :branch "master")
   :init (setq lsp-prefer-flymake nil))
 
 ;; Enable nice rendering of diagnostics like compile errors.
 
 (use-package lsp-ui
+  :straight (:repo "https://github.com/emacs-lsp/lsp-ui" :branch "master")
   :hook (lsp-mode . lsp-ui-mode))
 
 ;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
