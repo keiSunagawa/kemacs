@@ -97,6 +97,9 @@
   :config (progn
             (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))))
 
+(use-package golden-ratio
+  :config (progn
+            (golden-ratio-mode)))
 ;; used better helm switch buffer
 ;; (use-package nswbuff
 ;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")

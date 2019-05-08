@@ -29,6 +29,16 @@
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode))
 
-(add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
-(require 'lsp-scala)
-(add-hook 'scala-mode-hook #'lsp)
+;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
+;;(require 'lsp-scala)
+
+;; Add company-lsp backend for metals
+(use-package company-lsp)
+
+(use-package lsp-scala
+  :straight (:repo "https://github.com/rossabaker/lsp-scala" :branch "master")
+  :after scala-mode
+  :demand t
+  ;; Optional - enable lsp-scala automatically in scala files
+  :hook (scala-mode . lsp))
+;; (add-hook 'scala-mode-hook #'lsp)
