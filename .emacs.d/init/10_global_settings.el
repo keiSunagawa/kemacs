@@ -81,7 +81,6 @@
 (set-keyboard-coding-system 'utf-8-emacs-mac)
 ;; (add-to-list 'load-path "~/.emacs.d/lib/ruby_end")
 ;; (require 'ruby-end)
-;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
 (setq js-indent-level 2)
 (global-superword-mode 1)
 ;; recentf
