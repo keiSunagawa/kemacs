@@ -7,6 +7,7 @@
         helm-M-x
         indent-for-tab-command
         swiper
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once

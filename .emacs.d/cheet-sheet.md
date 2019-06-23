@@ -13,7 +13,7 @@
 - `C-x u` | `C-/` | `C-_` -> undo
 - `C-k` -> delete line
 - `M-;` -> comment out
-- `C-s` | C-r-> searche
+- `C-s` -> searche
 - `C-c r` -> rectangle select
 - `C-f` -> reformat indent
 - `M-g g` -> go to lien

@@ -38,12 +38,12 @@
 
 (use-package projectile
   ;; project-root find rule
-  ;; :init (progn
-  ;;         (setq projectile-project-root-files-functions
-  ;;               '(projectile-root-local
-  ;;                 projectile-root-bottom-up
-  ;;                 projectile-root-top-down
-  ;;                 projectile-root-top-down-recurring)))
+  :init (progn
+          (setq projectile-project-root-files-functions
+                '(projectile-root-local
+                  projectile-root-top-down
+                  projectile-root-bottom-up
+                  projectile-root-top-down-recurring)))
   :config (progn
             (projectile-global-mode)
             (setq projectile-completion-system 'helm)

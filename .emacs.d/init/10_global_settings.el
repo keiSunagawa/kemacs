@@ -37,6 +37,10 @@
   (interactive)
   (switch-to-buffer "*dashboard*"))
 
+(defun my-completion ()
+  (interactive)
+  (company-begin-backend 'company-dabbrev))
+
 ;; Cursor elisp doc
 (add-hook 'emacs-lisp-mode-hook
           '(lambda ()

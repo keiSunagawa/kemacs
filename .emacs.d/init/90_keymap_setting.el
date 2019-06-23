@@ -51,9 +51,13 @@
 
 ;; company
 (general-define-key
+ "TAB" 'my-completion
+ )
+(general-define-key
  :keymaps 'company-active-map
  "C-n" 'company-select-next
  "C-p" 'company-select-previous
+ "C-a" 'company-other-backend
  )
 (general-define-key
  :keymaps 'company-search-map

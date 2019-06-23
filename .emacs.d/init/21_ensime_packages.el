@@ -27,12 +27,9 @@
 
 ;; Enable nice rendering of diagnostics like compile errors.
 
-(use-package lsp-ui
-  :straight (:repo "https://github.com/emacs-lsp/lsp-ui" :branch "master")
-  :hook (lsp-mode . lsp-ui-mode))
-
-;; (add-to-list 'load-path "~/.emacs.d/lib/lsp-scala")
-;;(require 'lsp-scala)
+;; (use-package lsp-ui
+;;   :straight (:repo "https://github.com/emacs-lsp/lsp-ui" :branch "master")
+;;   :hook (lsp-mode . lsp-ui-mode))
 
 ;; Add company-lsp backend for metals
 (use-package company-lsp)
