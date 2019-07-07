@@ -30,6 +30,10 @@
   :config (progn
             (global-company-mode)))
 
+(use-package yasnippet
+  :straight (:repo "https://github.com/joaotavora/yasnippet" :branch "master")
+  :config (yas-reload-all))
+
 (use-package highlight-symbol
   :config (progn
             (add-hook 'emacs-lisp-mode-hook 'highlight-symbol-mode)
@@ -81,6 +85,10 @@
 (use-package markdown-mode)
 (use-package csv-mode)
 (use-package yaml-mode)
+(use-package terraform-mode
+  :config (progn
+            (add-hook 'before-save-hook '(lambda () (when (derived-mode-p 'terraform-mode) (terraform-format-buffer))))))
+
 (use-package dockerfile-mode
   :config (progn
             (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))))
@@ -101,6 +109,9 @@
   :config (progn
             (golden-ratio-mode)))
 (use-package yasnippet)
+(use-package kubernetes
+  :commands (kubernetes-overview))
+
 ;; used better helm switch buffer
 ;; (use-package nswbuff
 ;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")

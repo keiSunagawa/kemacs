@@ -76,3 +76,10 @@
  :prefix "C-c"
  "e" 'ensime-print-errors-at-point
  )
+
+;; yasnippet
+(general-define-key
+  :keymaps 'yas-minor-mode-map
+  :prefix "C-c"
+  "i" 'yas-expand
+ )

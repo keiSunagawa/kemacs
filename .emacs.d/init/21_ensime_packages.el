@@ -17,8 +17,7 @@
    minibuffer-local-completion-map))
 
 (use-package scala-mode
-  :config (progn (add-hook 'scala-mode-hook '(lambda ()
-                                              (global-auto-complete-mode -1)))))
+  :config (progn (add-hook 'scala-mode-hook #'yas-minor-mode)))
 
 ;; metals
 (use-package lsp-mode

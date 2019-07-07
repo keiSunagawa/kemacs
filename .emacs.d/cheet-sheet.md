@@ -71,3 +71,7 @@
 - `C-c e` -> show error message
 - `C-t` -> show type
 - `M-.` -> junp to definition
+
+## k8s-overview
+- `v` -> select sections(switch deployment, service...)
+- `<TAB>` -> toggle section
