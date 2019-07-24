@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: PHONY
+# key: ph
+# --
+.PHONY: ${1:command}
+$1:
+	$0

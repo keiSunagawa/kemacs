@@ -6,10 +6,13 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
-(set-default 'truncate-lines t)
-;; do not use tab char for indent
+(setq truncate-lines nil)
+(setq truncate-partial-width-windows nil)
+
+;; enable *case-region function
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+;; do not use tab char for indent
 (setq-default indent-tabs-mode nil)
 
 ;; show `()` highlight

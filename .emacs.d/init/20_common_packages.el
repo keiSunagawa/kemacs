@@ -32,7 +32,9 @@
 
 (use-package yasnippet
   :straight (:repo "https://github.com/joaotavora/yasnippet" :branch "master")
-  :config (yas-reload-all))
+  :config (progn
+            (yas-reload-all)
+            (add-hook 'makefile-bsdmake-mode-hook #'yas-minor-mode)))
 
 (use-package highlight-symbol
   :config (progn
@@ -108,7 +110,7 @@
 (use-package golden-ratio
   :config (progn
             (golden-ratio-mode)))
-(use-package yasnippet)
+
 (use-package kubernetes
   :commands (kubernetes-overview))
 

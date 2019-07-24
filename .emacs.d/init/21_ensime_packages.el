@@ -1,11 +1,3 @@
-;; disaibled ensime
-;; (use-package ensime
-;;   :straight (:repo "https://github.com/ensime/ensime-emacs" :branch "2.0")
-;;   :init (progn
-;;           (setq ensime-eldoc-hints 'error))
-;;   :config (progn
-;;             (add-to-list 'exec-path "/usr/local/bin")))
-
 (use-package sbt-mode
   :commands sbt-start sbt-command
   :config
@@ -25,7 +17,6 @@
   :init (setq lsp-prefer-flymake nil))
 
 ;; Enable nice rendering of diagnostics like compile errors.
-
 ;; (use-package lsp-ui
 ;;   :straight (:repo "https://github.com/emacs-lsp/lsp-ui" :branch "master")
 ;;   :hook (lsp-mode . lsp-ui-mode))
