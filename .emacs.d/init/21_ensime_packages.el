@@ -9,12 +9,28 @@
    minibuffer-local-completion-map))
 
 (use-package scala-mode
-  :config (progn (add-hook 'scala-mode-hook #'yas-minor-mode)))
+  :config (progn
+            (add-hook 'scala-mode-hook #'yas-minor-mode)
+            (if (not use-scala-metals) (add-hook 'scala-mode-hook '(lambda () (flycheck-mode -1))))
+            ))
 
-;; metals
-(use-package lsp-mode
-  :straight (:repo "https://github.com/emacs-lsp/lsp-mode" :branch "master")
-  :init (setq lsp-prefer-flymake nil))
+
+(if use-scala-metals
+    (progn
+      (use-package lsp-mode
+        :straight (:repo "https://github.com/emacs-lsp/lsp-mode" :branch "master")
+        :init (setq lsp-prefer-flymake nil))
+      (use-package company-lsp)
+      (use-package lsp-scala
+        :straight (:repo "https://github.com/rossabaker/lsp-scala" :branch "master")
+        :after scala-mode
+        :demand t
+        ;; Optional - enable lsp-scala automatically in scala files
+        :hook (scala-mode . lsp))
+      )
+  )
+
+;;aaa") metals
 
 ;; Enable nice rendering of diagnostics like compile errors.
 ;; (use-package lsp-ui
@@ -22,12 +38,7 @@
 ;;   :hook (lsp-mode . lsp-ui-mode))
 
 ;; Add company-lsp backend for metals
-(use-package company-lsp)
 
-(use-package lsp-scala
-  :straight (:repo "https://github.com/rossabaker/lsp-scala" :branch "master")
-  :after scala-mode
-  :demand t
-  ;; Optional - enable lsp-scala automatically in scala files
-  :hook (scala-mode . lsp))
+
+
 ;; (add-hook 'scala-mode-hook #'lsp)
