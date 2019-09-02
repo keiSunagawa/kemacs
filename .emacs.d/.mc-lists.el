@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         cua-paste
+        elscreen-next
         helm-M-x
         indent-for-tab-command
         swiper
@@ -15,4 +16,5 @@
       '(
         end-of-buffer
         markdown-outdent-or-delete
+        yaml-electric-dash-and-dot
         ))

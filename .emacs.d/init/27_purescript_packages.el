@@ -3,7 +3,8 @@
   :config (progn
             (add-hook 'purescript-mode-hook
                       (lambda ()
-                        (psc-ide-mode)
+                        (yas-minor-mode)
+                        ;; (psc-ide-mode)
                         (company-mode)
-                        (flycheck-mode)
+                        ;; (flycheck-mode)
                         (turn-on-purescript-indentation)))))

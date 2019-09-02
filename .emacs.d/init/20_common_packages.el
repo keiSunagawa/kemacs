@@ -112,8 +112,13 @@
             (golden-ratio-mode)))
 
 (use-package kubernetes
+  :init (progn
+            (setq kubernetes-overview-custom-views-alist '(
+                                                          (overview . (context overview pods services)))))
   :commands (kubernetes-overview))
-
+(use-package mustache)
+(use-package mustache-mode
+  :straight (:repo "https://github.com/mustache/emacs" :branch "master"))
 ;; used better helm switch buffer
 ;; (use-package nswbuff
 ;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")
