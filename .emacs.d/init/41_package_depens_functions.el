@@ -1,3 +1,5 @@
+(require 'direx-project)
+
 (defun is-project-dir ()
   (direx-project:find-project-root-noselect
    (or buffer-file-name default-directory)))

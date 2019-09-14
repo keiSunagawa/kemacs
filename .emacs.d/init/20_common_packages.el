@@ -81,7 +81,8 @@
                   (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
             (setq ace-jump-word-mode-use-query-char nil)))
 
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :straight (:repo "https://github.com/magnars/multiple-cursors.el.git" :branch "master"))
 
 ;; text file syntax support
 (use-package markdown-mode)
