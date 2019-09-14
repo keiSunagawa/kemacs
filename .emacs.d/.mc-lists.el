@@ -10,6 +10,7 @@
         swiper
         undefined
         yaml-electric-backspace
+        yaml-electric-bar-and-angle
         ))
 
 (setq mc/cmds-to-run-once

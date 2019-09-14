@@ -4,7 +4,7 @@
             (add-hook 'purescript-mode-hook
                       (lambda ()
                         (yas-minor-mode)
-                        ;; (psc-ide-mode)
+                        (psc-ide-mode)
                         (company-mode)
-                        ;; (flycheck-mode)
+                        (flycheck-mode)
                         (turn-on-purescript-indentation)))))

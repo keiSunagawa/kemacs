@@ -3,6 +3,7 @@
 (general-define-key
  "C-a" 'seq-begin
  "C-e" 'seq-end
+ "C-d" 'z-dir
  "C-s" 'swiper
  "C-r" 'ace-jump-mode
  "C-@" 'seq-cua

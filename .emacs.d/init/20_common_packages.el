@@ -119,6 +119,9 @@
 (use-package mustache)
 (use-package mustache-mode
   :straight (:repo "https://github.com/mustache/emacs" :branch "master"))
+(use-package dhall-mode
+  :mode "\\.dhall\\'")
+(use-package graphviz-dot-mode)
 ;; used better helm switch buffer
 ;; (use-package nswbuff
 ;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")
