@@ -15,29 +15,46 @@
     (`(k/succ ,v) (funcall f v))
     (`(k/fail ,ev) (list 'k/fail ev))))
 
+;; F[A] => (A => B) => F[B]
+(defun k/map (adt f)
+  (pcase adt
+    (`(k/succ ,v) (list 'k/succ (funcall f v)))
+    (`(k/fail ,ev) (list 'k/fail ev))))
+
+
 ;;
 
-(defmacro k/do (bodies)
-  (car (_k/do-f (-map (lambda (b) `,b) bodies))))
+;; (defmacro k/do (bodies)
+;;   (car (_k/do-f (-map (lambda (b) `,b) bodies))))
+(defmacro k/do (bodies) `(_k/do-f ',bodies))
 
 (defun _k/do-f (bodies)
-  (-reduce-from '_k/do-one '('start nil) bodies))
+  (let* ((h (car bodies))
+         ;; first : F[(A, env)]
+         (first (_k/do-parse-phase nil h)))
+    (-reduce-from '_k/do-one first (cdr bodies))))
 
+;; F[(A, env)] => ast => F[(A, env)]
 (defun _k/do-one (acm next)
-  (let* ((stx (car acm))
-         (env (cdr acm)))
-    (_k/do-parse-phase stx env next)))
+  (k/bind acm (lambda (k)
+                (let* ((ret (car k))
+                       (env (cdr k)))
+                  (_k/do-parse-phase env next)))))
 
-(defun _k/do-parse-phase (stx env body)
+;; env => ast => F[(A, env)]
+(defun _k/do-parse-phase (env body)
   (pcase body
-    (`(,v <- ,f) (_k/do-eval-bind v f stx env))
+    (`(,sym <- ,f) (_k/do-eval-bind sym f env))
     (`,n (error (format "unmatch syntax %s" n)))
     ))
 
-;; ret: (ret env)
-(defun _k/do-eval-bind (v f stx env)
-  (progn (message (format "%s" f))
-  (cons (eval f) env)))
+;; ret: symbol => (=> F[A]) => env => F[(A, env)]
+(defun _k/do-eval-bind (sym f env)
+  (progn
+    (message (format "%s" f))
+    (k/map (eval f) (lambda (res)
+                       (let* ((new-env (cons (list sym res) env)))
+                       (cons res new-env))))))
 
 ;; (defun _k/do-parse-let () 1)
 (defun _k/do-eval-pure () 1)
