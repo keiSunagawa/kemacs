@@ -1,1 +1,1 @@
-(setq use-scala-metals nil)
+(setq use-scala-metals t)

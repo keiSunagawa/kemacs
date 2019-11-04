@@ -15,19 +15,19 @@
             ))
 
 
-(if use-scala-metals
-    (progn
+(when use-scala-metals
       (use-package lsp-mode
         :straight (:repo "https://github.com/emacs-lsp/lsp-mode" :branch "master")
-        :init (setq lsp-prefer-flymake nil))
-      (use-package company-lsp)
-      (use-package lsp-scala
-        :straight (:repo "https://github.com/rossabaker/lsp-scala" :branch "master")
-        :after scala-mode
-        :demand t
-        ;; Optional - enable lsp-scala automatically in scala files
+        :init (setq lsp-prefer-flymake nil)
         :hook (scala-mode . lsp))
-      )
+      (use-package company-lsp)
+      ;; (use-package lsp-scala
+      ;;   :straight (:repo "https://github.com/rossabaker/lsp-scala" :branch "master")
+      ;;   :after scala-mode
+      ;;   :demand t
+      ;;   ;; Optional - enable lsp-scala automatically in scala files
+      ;;   
+      ;;   )
   )
 
 ;;aaa") metals
