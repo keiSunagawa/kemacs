@@ -6,7 +6,8 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
-(setq truncate-lines nil)
+;; (setq truncate-lines nil)
+(setq-default truncate-lines t)
 (setq truncate-partial-width-windows nil)
 
 ;; enable *case-region function

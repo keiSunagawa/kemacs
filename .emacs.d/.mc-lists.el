@@ -7,6 +7,8 @@
         elscreen-next
         helm-M-x
         indent-for-tab-command
+        markdown-enter-key
+        my-completion
         swiper
         undefined
         yaml-electric-backspace
@@ -17,5 +19,6 @@
       '(
         end-of-buffer
         markdown-outdent-or-delete
+        seq-begin
         yaml-electric-dash-and-dot
         ))

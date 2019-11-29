@@ -16,9 +16,13 @@
 
 
 (when use-scala-metals
-      (use-package lsp-mode
-        :straight (:repo "https://github.com/emacs-lsp/lsp-mode" :branch "master")
-        :init (setq lsp-prefer-flymake nil)
+  (use-package lsp-mode
+    :straight (:repo "https://github.com/emacs-lsp/lsp-mode" :branch "master")
+    :init (setq lsp-prefer-flymake nil)
+    :config (progn
+              (add-hook 'before-save-hook '(lambda ()
+                                             (when (and (stringp buffer-file-name) (string-match "\\.scala\\'" buffer-file-name))
+                                               (lsp-format-buffer)))))
         :hook (scala-mode . lsp))
       (use-package company-lsp)
       ;; (use-package lsp-scala
@@ -33,9 +37,7 @@
 ;;aaa") metals
 
 ;; Enable nice rendering of diagnostics like compile errors.
-;; (use-package lsp-ui
-;;   :straight (:repo "https://github.com/emacs-lsp/lsp-ui" :branch "master")
-;;   :hook (lsp-mode . lsp-ui-mode))
+(use-package lsp-ui)
 
 ;; Add company-lsp backend for metals
 

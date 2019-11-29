@@ -127,3 +127,6 @@
 ;; (use-package nswbuff
 ;; :s1;5Ctraight (:repo "https://github.com/joostkremers/nswbuff" :branch "master")
 ;;  :1;5Cinit (setq nswbuff-exclude-buffer-regexps '("^ .*" "^\\*.*\\*")))
+(use-package thrift-mode
+  :mode "\\.thrift\\'")
+(use-package plantuml-mode)
