@@ -84,3 +84,9 @@
   :prefix "C-c"
   "i" 'yas-expand
  )
+
+;; ivy minibuffer input
+(general-define-key
+  :keymaps 'ivy-minibuffer-map
+  "C-a" 'ivy-insert-current
+ )
