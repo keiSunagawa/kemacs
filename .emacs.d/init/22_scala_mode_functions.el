@@ -63,7 +63,8 @@
     ))
 
 (defun kfm/make-dir (dir-path)
-  (if (not (f-exists? dir-path)) (f-mkdir dir-path)))
+  (if (not (f-exists? dir-path))
+      (shell-command-to-string (format "mkdir -p %s" dir-path))))
 
 (defun kfm/file-text (package name select-mode)
   (let* ((code (pcase select-mode
