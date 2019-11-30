@@ -2,18 +2,26 @@
   :config (progn
             (global-undo-tree-mode)))
 
-(use-package helm
-  :config (progn
-            (require 'helm-config)
-            (helm-mode 1)))
+;; (use-package helm
+;;   :config (progn
+;;             (require 'helm-config)
+;;             (helm-mode 1)))
+(use-package counsel
+  :custom
+  (ivy-use-virtual-buffers t)
+  (ivy-height 50)
+  (ivy-count-format "(%d/%d) ")
+  (enable-recursive-minibuffers t)
+  ;;(ivy-use-selectable-prompt t "Make the prompt line selectable")
+      )
 
 (use-package swiper)
 (use-package expand-region)
 
-(use-package helm-descbinds
-  :config
-  (progn
-    (helm-descbinds-mode)))
+;; (use-package helm-descbinds
+;;   :config
+;;   (progn
+;;     (helm-descbinds-mode)))
 
 (use-package elscreen
   :config (progn
@@ -52,14 +60,15 @@
                   projectile-root-top-down-recurring)))
   :config (progn
             (projectile-global-mode)
-            (setq projectile-completion-system 'helm)
+            ;;(setq projectile-completion-system 'helm)
             (add-to-list 'projectile-project-root-files "package.json")
             (add-to-list 'projectile-project-root-files ".gitignore")
             (add-to-list 'projectile-project-root-files ".projectroot")))
 
-(use-package helm-projectile
-  :config (progn
-            (helm-projectile-on)))
+;; (use-package helm-projectile
+;;   :config (progn
+;;             (helm-projectile-on)))
+(use-package counsel-projectile)
 
 ;; projectile like root find function
 (defun kerfume/direx-project:vc-root-p (dirname)

@@ -36,4 +36,7 @@
  '(font-lock-type-face ((t (:inherit bold :foreground "color-29"))))
  '(helm-selection ((t (:background "color-22" :foreground "color-41"))))
  '(helm-selection-line ((t (:background "#4e4e4e" :foreground "color-41"))))
- '(highlight-symbol-face ((t (:background "color-18" :foreground "cyan" :width normal)))))
+ '(highlight-symbol-face ((t (:background "color-18" :foreground "cyan" :width normal))))
+ '(ivy-current-match ((t (:distant-foreground nil :background "blue"))))
+ '(ivy-minibuffer-match-face-3 ((t (:foreground "brightcyan" :underline t))))
+ '(ivy-virtual ((t (:foreground "color-138" :weight bold)))))

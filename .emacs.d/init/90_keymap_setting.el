@@ -16,7 +16,7 @@
  "M-p" 'step-up
  "M-k" 'backward-kill-line
  "M-q" 'transpose-chars
- "M-x" 'helm-M-x
+ "M-x" 'counsel-M-x
  "M-y" 'helm-show-kill-ring
  "M-w" 'er/expand-region
  "M-u" 'seq-change-case
@@ -36,14 +36,16 @@
  "<right>" 'windmove-right
  "F" 'windmove-right
  "f" 'indent-region
- "p" 'projectile-find-file
- "g" 'projectile-grep
+ "p" 'counsel-projectile-find-file
+ "g" 'counsel-projectile-grep
  "d" 'my-direx-jump-project-root
+ "b" 'counsel-switch-buffer
+ "C-f" 'counsel-find-file
  )
-(general-define-key
- :prefix "C-c"
- "C-f" 'helm-recentf
- )
+;; (general-define-key
+;;  :prefix "C-c"
+;;  "C-f" 'helm-recentf
+;;  )
 (general-define-key
  :prefix "C-z"
  "b" 'elscreen-previous
