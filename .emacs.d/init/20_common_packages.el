@@ -2,10 +2,8 @@
   :config (progn
             (global-undo-tree-mode)))
 
-;; (use-package helm
-;;   :config (progn
-;;             (require 'helm-config)
-;;             (helm-mode 1)))
+;; use only helm-show-kill-ring
+(use-package helm)
 (use-package counsel
   :custom
   (ivy-use-virtual-buffers t)
