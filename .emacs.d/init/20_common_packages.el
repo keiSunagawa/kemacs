@@ -4,6 +4,10 @@
 
 ;; use only helm-show-kill-ring
 (use-package helm)
+(use-package helm-descbinds
+  :config
+  (progn
+    (helm-descbinds-mode)))
 (use-package counsel
   :custom
   (ivy-use-virtual-buffers t)
@@ -12,7 +16,8 @@
   (enable-recursive-minibuffers t)
   ;;(ivy-use-selectable-prompt t "Make the prompt line selectable")
       )
-
+(use-package org
+  :config (setq org-agenda-files '("/Users/kerfume/work/lisp/")))
 (use-package swiper)
 (use-package expand-region)
 
@@ -137,3 +142,5 @@
 (use-package thrift-mode
   :mode "\\.thrift\\'")
 (use-package plantuml-mode)
+
+(use-package protobuf-mode)

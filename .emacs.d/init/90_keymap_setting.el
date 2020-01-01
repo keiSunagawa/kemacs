@@ -92,3 +92,11 @@
   :keymaps 'ivy-minibuffer-map
   "C-a" 'ivy-insert-current
  )
+
+;; org mode
+(general-define-key
+ :keymaps 'org-mode-map
+ :prefix "C-o"
+ "t" 'org-todo
+ "c" 'org-ctrl-c-ctrl-c
+ )
