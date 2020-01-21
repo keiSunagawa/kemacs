@@ -17,8 +17,10 @@
   ;;(ivy-use-selectable-prompt t "Make the prompt line selectable")
   :config
   (progn
-      (setq ivy-initial-inputs-alist nil))
-      )
+    (setq ivy-initial-inputs-alist nil)
+    (setq ivy-re-builders-alist
+          '((t . ivy--regex-ignore-order)))))
+
 (use-package org
   :config (setq org-agenda-files '("/Users/kerfume/work/lisp/")))
 (use-package swiper)
