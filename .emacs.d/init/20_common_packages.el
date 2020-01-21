@@ -15,6 +15,9 @@
   (ivy-count-format "(%d/%d) ")
   (enable-recursive-minibuffers t)
   ;;(ivy-use-selectable-prompt t "Make the prompt line selectable")
+  :config
+  (progn
+      (setq ivy-initial-inputs-alist nil))
       )
 (use-package org
   :config (setq org-agenda-files '("/Users/kerfume/work/lisp/")))

@@ -100,3 +100,10 @@
  "t" 'org-todo
  "c" 'org-ctrl-c-ctrl-c
  )
+
+;; scala
+(general-define-key
+ :keymaps 'lsp-mode-map
+ :prefix "C-c"
+ "a" 'lsp-execute-code-action
+ )
