@@ -11,6 +11,7 @@
 ;; (use-package ac-alchemist
 ;;   :config (progn
 ;;             (add-to-list 'elixir-mode-hook 'ac-alchemist-setup)))
+
 (use-package flycheck-elixir
   :config (progn
             (add-hook 'elixir-mode-hook 'flycheck-mode)))

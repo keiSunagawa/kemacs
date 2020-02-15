@@ -3,6 +3,7 @@
 ;; (require 'linum)
 ;; (global-linum-mode)
 
+(defun k/load (path) (init-loader-load (format "~/.emacs.d/init/%s" path)))
 (require 'server)
 (unless (server-running-p)
   (server-start))

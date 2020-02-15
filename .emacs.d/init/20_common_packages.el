@@ -3,33 +3,32 @@
             (global-undo-tree-mode)))
 
 ;; use only helm-show-kill-ring
-(use-package helm)
+(use-package helm
+  :config (progn
+            (require 'helm-config)
+            (helm-mode 1)))
+
 (use-package helm-descbinds
   :config
   (progn
     (helm-descbinds-mode)))
+
 (use-package counsel
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-height 50)
   (ivy-count-format "(%d/%d) ")
   (enable-recursive-minibuffers t)
-  ;;(ivy-use-selectable-prompt t "Make the prompt line selectable")
-  :config
-  (progn
-    (setq ivy-initial-inputs-alist nil)
-    (setq ivy-re-builders-alist
-          '((t . ivy--regex-ignore-order)))))
+  (ivy-use-selectable-prompt t "Make the prompt line selectable")
+  (ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
+  (ivy-initial-inputs-alist nil))
 
 (use-package org
   :config (setq org-agenda-files '("/Users/kerfume/work/lisp/")))
+
 (use-package swiper)
 (use-package expand-region)
 
-;; (use-package helm-descbinds
-;;   :config
-;;   (progn
-;;     (helm-descbinds-mode)))
 
 (use-package elscreen
   :config (progn
