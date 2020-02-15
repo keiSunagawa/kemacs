@@ -1,3 +1,0 @@
-[submodule ".emacs.d/lib/lsp-scala"]
-	path = .emacs.d/lib/lsp-scala
-	url = git@github.com:rossabaker/lsp-scala.git
