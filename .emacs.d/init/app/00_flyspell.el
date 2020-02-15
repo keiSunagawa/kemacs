@@ -14,6 +14,6 @@
    (add-hook hook
              '(lambda () (flyspell-mode 1))))
  '(
-   scala-mode-hook
-   rust-mode-hook
+   ;;scala-mode-hook
+   ;;rust-mode-hook
    ))

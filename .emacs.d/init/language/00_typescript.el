@@ -48,3 +48,5 @@
                 (setup-tide-mode))))
   ;; enable typescript-tslint checker
   (flycheck-add-mode 'typescript-tslint 'web-mode))
+
+(setq js-indent-level 2)
