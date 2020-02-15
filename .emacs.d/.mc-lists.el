@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-kill-line
         cua-paste
         elscreen-next
         helm-M-x

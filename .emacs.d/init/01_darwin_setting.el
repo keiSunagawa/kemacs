@@ -12,8 +12,10 @@
     (setq interprogram-cut-function 'paste-to-osx)
     (setq interprogram-paste-function 'copy-from-osx)
 
-    (add-to-list 'load-path "~/.emacs.d/lib/site-lisp")
-    (require 'eaw)
-    (eaw-fullwidth)
+    ;; (add-to-list 'load-path "~/.emacs.d/lib/site-lisp")
+    ;; (require 'eaw)
+    ;; (eaw-fullwidth)
+    ;; (set-language-environment "English")
+    ;; (set-language-environment "Japanese")
     ))
 

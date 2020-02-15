@@ -2,3 +2,5 @@
 
 (require 'protect)
 
+(defmacro k-dbg (prefix v)
+  `(progn (message (format ,prefix ,v)) ,v))
