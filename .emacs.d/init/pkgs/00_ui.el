@@ -19,3 +19,6 @@
   :init (global-flycheck-mode)
   :config (progn
             (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))))
+
+(use-package switch-window
+  :custom switch-window-shortcut-appearance 'asciiart)

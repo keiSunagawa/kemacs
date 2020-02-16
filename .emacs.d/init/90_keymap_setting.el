@@ -41,6 +41,7 @@
  "d" 'my-direx-jump-project-root
  "b" 'counsel-switch-buffer
  "C-f" 'counsel-find-file
+ "m" 'switch-window
  )
 ;; (general-define-key
 ;;  :prefix "C-c"

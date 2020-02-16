@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: hoge
-# key: h
-# --
-val hoge = $0
