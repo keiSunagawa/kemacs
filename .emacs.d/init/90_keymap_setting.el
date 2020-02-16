@@ -43,6 +43,7 @@
  "C-f" 'counsel-find-file
  "m" 'switch-window
  )
+
 ;; (general-define-key
 ;;  :prefix "C-c"
 ;;  "C-f" 'helm-recentf
@@ -95,12 +96,12 @@
  )
 
 ;; org mode
-(general-define-key
- :keymaps 'org-mode-map
- :prefix "C-o"
- "t" 'org-todo
- "c" 'org-ctrl-c-ctrl-c
- )
+;; (general-define-key
+;;  :keymaps 'org-mode-map
+;;  :prefix "C-o"
+;;  "t" 'org-todo
+;;  "c" 'org-ctrl-c-ctrl-c
+;;  )
 
 ;; scala
 (general-define-key
