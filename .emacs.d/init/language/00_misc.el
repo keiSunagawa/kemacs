@@ -21,3 +21,6 @@
 (use-package plantuml-mode)
 
 (use-package protobuf-mode)
+
+(use-package rego-mode
+  :straight (:repo "https://github.com/psibi/rego-mode" :branch "master"))

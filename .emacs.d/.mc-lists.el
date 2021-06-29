@@ -4,14 +4,18 @@
 (setq mc/cmds-to-run-for-all
       '(
         backward-kill-line
+        cua-cut-region
         cua-paste
         elscreen-next
         helm-M-x
         indent-for-tab-command
         markdown-enter-key
+        markdown-outdent-or-delete
         my-completion
+        seq-cua
         swiper
         undefined
+        undo-tree-visualize
         yaml-electric-backspace
         yaml-electric-bar-and-angle
         ))
@@ -19,7 +23,6 @@
 (setq mc/cmds-to-run-once
       '(
         end-of-buffer
-        markdown-outdent-or-delete
         seq-begin
         yaml-electric-dash-and-dot
         ))

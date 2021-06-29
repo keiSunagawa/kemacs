@@ -15,6 +15,9 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+;; 一時的なテーマ
+(use-package badger-theme)
+(load-theme 'badger t)
 (use-package init-loader)
 
 ;; init
