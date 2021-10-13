@@ -23,6 +23,7 @@
 (setq mc/cmds-to-run-once
       '(
         end-of-buffer
+        helm-show-kill-ring
         seq-begin
         yaml-electric-dash-and-dot
         ))
