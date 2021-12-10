@@ -15,3 +15,8 @@
 (use-package flycheck-elixir
   :config (progn
             (add-hook 'elixir-mode-hook 'flycheck-mode)))
+
+(use-package ruby-end
+  :straight (:repo "https://github.com/rejeep/ruby-end.el" :branch "master")
+  :config (progn
+            (add-hook 'elixir-mode-hook 'ruby-end-mod)))

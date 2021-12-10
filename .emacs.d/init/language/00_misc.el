@@ -21,3 +21,7 @@
 (use-package plantuml-mode)
 
 (use-package protobuf-mode)
+
+(use-package nix-mode)
+(use-package graphql-mode
+  :mode "\\.gql\\'")

@@ -9,6 +9,7 @@
         helm-M-x
         indent-for-tab-command
         markdown-enter-key
+        markdown-outdent-or-delete
         my-completion
         swiper
         undefined
@@ -18,8 +19,8 @@
 
 (setq mc/cmds-to-run-once
       '(
+        electric-pair-delete-pair
         end-of-buffer
-        markdown-outdent-or-delete
         seq-begin
         yaml-electric-dash-and-dot
         ))

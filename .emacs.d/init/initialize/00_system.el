@@ -53,6 +53,7 @@
 (setq recentf-max-saved-items 30)
 (recentf-mode 1)
 
+ (setq create-lockfiles nil)
 ;; deplicate linum-mode ><
 ;; show line number
 ;; (require 'linum)
