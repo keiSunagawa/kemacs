@@ -5,12 +5,15 @@
       '(
         backward-kill-line
         cua-paste
+        dashboard-next-line
+        dashboard-return
         elscreen-next
         helm-M-x
         indent-for-tab-command
         markdown-enter-key
         markdown-outdent-or-delete
         my-completion
+        seq-end
         swiper
         undefined
         yaml-electric-backspace
@@ -21,6 +24,7 @@
       '(
         electric-pair-delete-pair
         end-of-buffer
+        helm-show-kill-ring
         seq-begin
         yaml-electric-dash-and-dot
         ))

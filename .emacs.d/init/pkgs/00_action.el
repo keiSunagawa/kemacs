@@ -9,7 +9,6 @@
            (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
            (ace-jump-word-mode-use-query-char nil))
 
-(use-package multiple-cursors
-  :straight (:repo "https://github.com/magnars/multiple-cursors.el.git" :branch "master"))
+(use-package multiple-cursors)
 
 (use-package madhat2r-theme)

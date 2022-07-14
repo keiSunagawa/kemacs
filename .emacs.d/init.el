@@ -19,24 +19,37 @@
 
 ;; init
 (init-loader-load "~/.emacs.d/init")
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  )
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(company-tooltip-selection ((t (:background "color-17" :foreground "#afd7d7"))))
+;;  '(font-lock-constant-face ((t (:foreground "magenta"))))
+;;  '(font-lock-string-face ((t (:foreground "thistle2"))))
+;;  '(font-lock-type-face ((t (:inherit bold :foreground "color-29"))))
+;;  '(helm-selection ((t (:background "color-22" :foreground "color-41"))))
+;;  '(helm-selection-line ((t (:background "#4e4e4e" :foreground "color-41"))))
+;;  '(highlight-symbol-face ((t (:background "color-18" :foreground "cyan" :width normal))))
+;;  '(ivy-current-match ((t (:distant-foreground nil :background "blue"))))
+;;  '(ivy-minibuffer-match-face-3 ((t (:foreground "brightcyan" :underline t))))
+;;  '(ivy-virtual ((t (:foreground "color-138" :weight bold)))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(custom-safe-themes
+   '("c335adbb7d7cb79bc34de77a16e12d28e6b927115b992bccc109fb752a365c72" default)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-selection ((t (:background "color-17" :foreground "#afd7d7"))))
- '(font-lock-constant-face ((t (:foreground "magenta"))))
- '(font-lock-string-face ((t (:foreground "thistle2"))))
- '(font-lock-type-face ((t (:inherit bold :foreground "color-29"))))
- '(helm-selection ((t (:background "color-22" :foreground "color-41"))))
- '(helm-selection-line ((t (:background "#4e4e4e" :foreground "color-41"))))
- '(highlight-symbol-face ((t (:background "color-18" :foreground "cyan" :width normal))))
- '(ivy-current-match ((t (:distant-foreground nil :background "blue"))))
- '(ivy-minibuffer-match-face-3 ((t (:foreground "brightcyan" :underline t))))
- '(ivy-virtual ((t (:foreground "color-138" :weight bold)))))
+ )

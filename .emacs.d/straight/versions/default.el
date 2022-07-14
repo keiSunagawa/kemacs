@@ -2,7 +2,6 @@
  ("ace-jump-mode" . "8351e2df4fbbeb2a4003f2fb39f46d33803f3dac")
  ("alchemist.el" . "6f99367511ae209f8fe2c990779764bbb4ccb6ed")
  ("cl-lib" . "e79686c4a26959c0ecba0951a7e335ed28035386")
- ("company-lsp" . "f921ffa0cdc542c21dc3dd85f2c93df4288e83bd")
  ("company-mode" . "f6974e3103497afe01da2ad4d2ea3668ad68bc27")
  ("counsel-projectile" . "6abd718627716f8825ab58963bdad1b4d4dc5392")
  ("csharp-mode" . "30ae13607c9d8174ab488ff58cd0dfe4e5cbd0c2")
@@ -43,8 +42,7 @@
  ("init-loader" . "5d3cea1004c11ff96b33020e337b03b925c67c42")
  ("kubernetes-el" . "7ef0e4be3a788bf45914308d6e2158384e3f605b")
  ("let-alist" . "57561d7d9267da48e8b7ab1f3bd45c9d05951289")
- ("lsp-mode" . "e3cc8f34204d3890e4616552a81db1ae94375d56")
- ("lsp-ui" . "d393bed7b993c98d39b5182502c8059b5aed7392")
+
  ("madhat2r-theme" . "6b387f09de055cfcc15d74981cd4f32f8f9a7323")
  ("magit" . "1b9995238fe3136217c40b8836311bc98b12897c")
  ("magit-popup" . "4250c3a606011e3ff2477e3b5bbde2b493f3c85c")

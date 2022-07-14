@@ -19,3 +19,6 @@
     ;; (set-language-environment "Japanese")
     ))
 
+(use-package afternoon-theme
+  :ensure t
+  :init (load-theme 'afternoon))
